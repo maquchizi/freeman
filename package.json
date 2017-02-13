@@ -2,6 +2,9 @@
   "name": "freeman",
   "version": "0.0.0",
   "description": "Bucketlist Service built with Angular 2 with statically typed build and AoT compilation",
+  "repository": {
+    "url": "https://github.com/maquchizi/freeman"
+  },
   "scripts": {
     "build.dev": "gulp build.dev --color --env-config dev",
     "build.dev.watch": "gulp build.dev.watch --color",
