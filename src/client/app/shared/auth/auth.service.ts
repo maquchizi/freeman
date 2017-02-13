@@ -21,7 +21,7 @@ export class AuthService {
    * Returns a Request for the HTTP GET request for the JSON resource.
    *
    */
-  public login(credentials: string){
+  public login(credentials: string) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     return this.http.post('http://127.0.0.1:5000/auth/login', credentials, options)
