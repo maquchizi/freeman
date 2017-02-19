@@ -19,8 +19,9 @@ export class LoginComponent {
 
   login(): boolean {
     let data = JSON.stringify({'email':this.email, 'password':this.password});
-    let response = this.authService.login(data);
-    response.subscribe();
+    this.authService.login(data).subscribe(
+      response => (localStorage.setItem('access_token', response.access_token))
+    );
     return false;
   }
 }

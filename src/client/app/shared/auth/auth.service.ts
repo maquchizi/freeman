@@ -15,35 +15,24 @@ export class AuthService {
    */
   constructor(private http: Http) {}
 
-
-
   /**
    * Returns a Request for the HTTP GET request for the JSON resource.
    *
    */
-  public login(credentials: string) {
+  login(credentials: string): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     return this.http.post('http://127.0.0.1:5000/auth/login', credentials, options)
-                    .map(this.extractToken)
+                    .map((res: Response) => res.json())
                     .catch(this.handleError);
   }
 
-  public register(credentials: string) {
+  register(credentials: string): Observable<string[]> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     return this.http.post('http://127.0.0.1:5000/auth/register', credentials, options)
                     .map((res: Response) => res.json())
                     .catch(this.handleError);
-  }
-
-  private extractToken(res: Response) {
-    let data = res.json();
-    if (res.status === 200) {
-      let token = data['access_token'];
-      console.log(token);
-      localStorage.setItem('access_token', token);
-    }
   }
 
   /**
