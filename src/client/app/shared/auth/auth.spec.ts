@@ -12,9 +12,6 @@ export function main() {
     let mockBackend: MockBackend;
 
     beforeEach(() => {
-      let mockLoginResponse = {
-        access_token: 'this-is-the-access-token'
-      };
       TestBed.configureTestingModule({
         providers: [
           AuthService,

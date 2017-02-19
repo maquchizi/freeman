@@ -1,0 +1,44 @@
+<p>This is the registration page</p>
+
+<form novalidate (ngSubmit)="register(user)" [formGroup]="user">
+    <label>
+        <span>Forename</span>
+        <input type="text" placeholder="Forename" formControlName="forename">
+    </label>
+    <div class="error" *ngIf="user.get('forename').touched && user.get('forename').hasError('required')">Forename is required</div>
+    <label>
+        <span>Surname</span>
+        <input type="text" placeholder="Surname" formControlName="surname">
+    </label>
+    <div class="error" *ngIf="user.get('surname').touched && user.get('surname').hasError('required')">Surname is required</div>
+    <label>
+            <span>Email address</span>
+            <input type="email" placeholder="Your email address" formControlName="email">
+        </label>
+        <div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched">
+            Email is required
+        </div>
+        <div class="error" *ngIf="user.get('email').hasError('invalidemail') && user.get('email').touched">
+            This doesn't look like a valid email address
+        </div>
+    <div formGroupName="pwd">
+        <label>
+            <span>Password</span>
+            <input type="password" placeholder="Password" formControlName="password">
+        </label>
+        <div class="error" *ngIf="user.get('pwd').get('password').hasError('required') && user.get('pwd').get('password').touched">
+            Password is required
+        </div>
+        <label>
+            <span>Confirm Password</span>
+            <input type="password" placeholder="Confirm Password" formControlName="confirm_password">
+        </label>
+        <div class="error" *ngIf="user.get('pwd').get('confirm_password').hasError('required') && user.get('pwd').get('confirm_password').touched">
+            Confirm Password is required
+        </div>
+        <div class="error" *ngIf="user.get('pwd').hasError('notequals') && user.get('pwd').get('confirm_password').touched">
+            Please enter the same pasword
+        </div>
+    </div>
+    <button type="submit" [disabled]="user.invalid">Sign up</button>
+</form>
