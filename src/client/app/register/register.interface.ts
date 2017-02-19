@@ -5,5 +5,5 @@ export interface User {
   pwd: {
     password: string;
     confirm_password: string;
-  }
+  };
 }

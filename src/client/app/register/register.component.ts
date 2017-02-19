@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../shared/auth/auth.service';
-import { User } from './register.interface'
+import { User } from './register.interface';
 
 /**
  * This class represents the lazy loaded RegisterComponent.
@@ -27,11 +27,16 @@ export class RegisterComponent implements OnInit {
   }
 
   passwordValidator(group: FormGroup) {
-    return group.get('password').value != '' && group.get('password').value != group.get('confirm_password').value ? { 'notequals': true } : null;
+    return group.get('password').value !== '' &&
+      group.get('password').value !== group.get('confirm_password').value ? { 'notequals': true } : null;
   }
 
   emailValidator(email: FormControl) {
-    let EMAIL_REGEXP = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i;
+    let EMAIL_REGEXP =
+    new RegExp (['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
+                    '|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.',
+                    '[0-9]{1,3}\])|(([a-zA-Z\\-0-9]+\\.)+',
+                    '[a-zA-Z]{2,}))$'].join(''));
     return EMAIL_REGEXP.test(email.value) ? null : { 'invalidemail': true };
   }
 
