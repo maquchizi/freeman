@@ -27,13 +27,16 @@ export function main() {
       });
     });
 
+
     it('should return an Observable when login gets called', async(() => {
       expect(TestBed.get(AuthService).login(this.data)).toEqual(jasmine.any(Observable));
     }));
 
+
     it('should return an Observable when register gets called', async(() => {
       expect(TestBed.get(AuthService).register(this.data)).toEqual(jasmine.any(Observable));
     }));
+
 
     it('should return access token on login', async(() => {
       let authService = TestBed.get(AuthService);
@@ -45,6 +48,21 @@ export function main() {
         conn.mockRespond(new Response(new ResponseOptions({ body: mockLoginResponse })));
       });
       authService.login(postData).subscribe((data:any) => {
+        expect(data.access_token).toEqual('this-is-the-access-token');
+      });
+    }));
+
+
+    it('should return access token on register', async(() => {
+      let authService = TestBed.get(AuthService);
+      let mockBackend = TestBed.get(MockBackend);
+      let postData = JSON.stringify({'email':'admin@admin.com', 'password':'password'});
+      let mockLoginResponse = JSON.stringify({'access_token': 'this-is-the-access-token'});
+
+      mockBackend.connections.subscribe((conn: any) => {
+        conn.mockRespond(new Response(new ResponseOptions({ body: mockLoginResponse })));
+      });
+      authService.register(postData).subscribe((data:any) => {
         expect(data.access_token).toEqual('this-is-the-access-token');
       });
     }));
