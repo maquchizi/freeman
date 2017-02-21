@@ -41,8 +41,7 @@
     "webdriver-start": "webdriver-manager start",
     "webdriver-update": "webdriver-manager update",
     "compodoc": "node_modules/.bin/compodoc -p src/client/tsconfig.json",
-    "serve.compodoc": "node_modules/.bin/compodoc -s",
-    "coveralls": "cat ./coverage_js/coverage.lcov | ./node_modules/coveralls/bin/coveralls.js"
+    "serve.compodoc": "node_modules/.bin/compodoc -s"
   },
   "author": "Mark Ng'ang'a",
   "license": "MIT",
