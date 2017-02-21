@@ -42,7 +42,7 @@
     "webdriver-update": "webdriver-manager update",
     "compodoc": "node_modules/.bin/compodoc -p src/client/tsconfig.json",
     "serve.compodoc": "node_modules/.bin/compodoc -s",
-    "coveralls": "cat ./coverage_js/coverage.lcov"
+    "coveralls": "cat ./coverage_js/coverage.lcov | ./node_modules/coveralls/bin/coveralls.js"
   },
   "author": "Mark Ng'ang'a",
   "license": "MIT",
@@ -72,6 +72,7 @@
     "codelyzer": "^2.0.0",
     "compodoc": "^0.0.29",
     "connect-history-api-fallback": "^1.3.0",
+    "coveralls": "^2.11.16",
     "cssnano": "^3.7.7",
     "deep-extend": "^0.4.1",
     "event-stream": "^3.3.4",
@@ -116,9 +117,9 @@
     "remap-istanbul": "^0.8.4",
     "rimraf": "^2.5.4",
     "rollup": "^0.41.4",
+    "rollup-plugin-commonjs": "^7.0.0",
     "rollup-plugin-includepaths": "0.2.1",
     "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-commonjs": "^7.0.0",
     "run-sequence": "^1.2.2",
     "semver": "^5.3.0",
     "serve-static": "^1.11.1",
