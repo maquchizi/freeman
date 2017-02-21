@@ -35,3 +35,6 @@ cache:
 
 script:
   - npm run tests.all && npm run build.prod.exp
+
+after_success:
+  - npm run coveralls

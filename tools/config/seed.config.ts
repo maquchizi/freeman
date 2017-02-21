@@ -570,15 +570,18 @@ export class SeedConfig {
       },
       reporters: ['mocha', 'coverage', 'karma-remap-istanbul'],
       coverageReporter: {
+        type: 'lcov',
         dir: this.COVERAGE_DIR + '/',
         reporters: [
           { type: 'json', subdir: '.', file: 'coverage-final.json' },
           { type: 'html', subdir: '.' }
-        ]
+        ],
+        repoToken: 'Ta2dw8dtMXGMUvIRoKStQsggqvb4o0LbV'
       },
       remapIstanbulReporter: {
         reports: {
-          html: this.COVERAGE_TS_DIR
+          html: this.COVERAGE_TS_DIR,
+          lcovonly: this.COVERAGE_DIR+  '/coverage.lcov'
         }
       }
     };
