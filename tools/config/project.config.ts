@@ -30,8 +30,8 @@ export class ProjectConfig extends SeedConfig {
     // Add `local` third-party libraries to be injected/bundled.
     this.APP_ASSETS = [
       ...this.APP_ASSETS,
-      {src: `${this.APP_SRC}/vendor/font-awesome/css/font-awesome.min.css`, inject: true, vendor: false}
-      // {src: `${this.CSS_SRC}/path-to-lib/test-lib.css`, inject: true, vendor: false},
+      {src: `${this.APP_SRC}/vendor/font-awesome/css/font-awesome.min.css`, inject: true, vendor: false},
+      {src: `${this.CSS_SRC}/freelancer.min.css`, inject: true, vendor: false},
     ];
 
     // Add packages (e.g. ng2-translate)
