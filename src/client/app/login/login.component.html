@@ -1,6 +1,36 @@
-<p>This is the login page</p>
-<form (submit)="login()">
-  <input [(ngModel)]="email" name="email" type="email" required placeholder="Email">
-  <input [(ngModel)]="password" name="password" type="password" required placeholder="Password">
-  <button type="submit">Login</button>
-</form>
+<section id="login">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2>Login</h2>
+          <hr class="star-primary"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <form (submit)="login()">
+            <div class="row control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Email</label>
+                <input [(ngModel)]="email" name="email" type="email" required placeholder="Email">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="row control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Password</label>
+                <input [(ngModel)]="password" name="password" type="password" required placeholder="Password">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="row">
+              <div class="form-group col-xs-12">
+                <button type="submit" class="btn btn-success btn-lg">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </section>
