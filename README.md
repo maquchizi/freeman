@@ -1,5 +1,6 @@
 # Freeman
 
-[![Build Status](https://travis-ci.org/maquchizi/freeman.svg?branch=develop)](https://travis-ci.org/maquchizi/freeman) [![Coverage Status](https://coveralls.io/repos/github/maquchizi/freeman/badge.svg?branch=develop)](https://coveralls.io/github/maquchizi/freeman?branch=develop)
+[![CircleCI](https://circleci.com/gh/maquchizi/freeman.svg?style=svg)](https://circleci.com/gh/maquchizi/freeman) [![codecov](https://codecov.io/gh/maquchizi/freeman/branch/develop/graph/badge.svg)](https://codecov.io/gh/maquchizi/freeman)
+
 
 Bucketlist Service built with Angular 2 with statically typed build and AoT compilation
