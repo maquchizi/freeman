@@ -2,10 +2,8 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { NameListService } from './name-list/name-list.service';
 import { AuthService } from './auth/auth.service';
 
 /**
@@ -22,7 +20,7 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [NameListService, AuthService]
+      providers: [AuthService]
     };
   }
 }
