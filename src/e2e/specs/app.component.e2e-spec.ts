@@ -10,12 +10,4 @@ describe('App', () => {
     expect(browser.getTitle()).toEqual('Freeman');
   });
 
-  it('should have <nav>', () => {
-    expect(element(by.css('sd-app sd-navbar nav')).isPresent()).toEqual(true);
-  });
-
-  it('should have correct nav text for Home', () => {
-    expect(element(by.css('sd-app sd-navbar nav a:first-child')).getText()).toEqual('HOME');
-  });
-
 });
