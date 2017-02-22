@@ -8,8 +8,6 @@ import { AuthService } from './auth.service';
 
 export function main() {
   describe('Auth Service', () => {
-    let nameListService: AuthService;
-    let mockBackend: MockBackend;
 
     beforeEach(() => {
       TestBed.configureTestingModule({
@@ -29,12 +27,12 @@ export function main() {
 
 
     it('should return an Observable when login gets called', async(() => {
-      expect(TestBed.get(AuthService).login(this.data)).toEqual(jasmine.any(Observable));
+      expect(TestBed.get(AuthService).login()).toEqual(jasmine.any(Observable));
     }));
 
 
     it('should return an Observable when register gets called', async(() => {
-      expect(TestBed.get(AuthService).register(this.data)).toEqual(jasmine.any(Observable));
+      expect(TestBed.get(AuthService).register()).toEqual(jasmine.any(Observable));
     }));
 
 
