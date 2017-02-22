@@ -32,6 +32,7 @@ export class ProjectConfig extends SeedConfig {
       ...this.APP_ASSETS,
       {src: `${this.APP_SRC}/vendor/font-awesome/css/font-awesome.min.css`, inject: true, vendor: false},
       {src: `${this.CSS_SRC}/freelancer.min.css`, inject: true, vendor: false},
+      {src: `${this.CSS_SRC}/custom.css`, inject: true, vendor: false},
     ];
 
     // Add packages (e.g. ng2-translate)
