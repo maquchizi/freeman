@@ -1,0 +1,10 @@
+.floating-label-form-group input {
+  width: 100%;
+}
+.help-block.text-danger {
+  font-size: 0.95em;
+  color: red;
+}
+.btn-lg {
+  padding: 8px 18px;
+}

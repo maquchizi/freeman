@@ -1,0 +1,59 @@
+<section id="register">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Register</h2>
+                <hr class="star-primary"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <form novalidate (ngSubmit)="register(user)" [formGroup]="user">
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Forename</label>
+                            <input type="text" placeholder="Forename" formControlName="forename">
+                            <p class="help-block text-danger" *ngIf="user.get('forename').touched && user.get('forename').hasError('required')">Forename is required</p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Surname</label>
+                            <input type="text" placeholder="Surname" formControlName="surname">
+                            <div class="help-block text-danger" *ngIf="user.get('surname').touched && user.get('surname').hasError('required')">Surname is required</div>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Email Address</label>
+                            <input type="text" placeholder="Email" formControlName="email">
+                            <p class="help-block text-danger" *ngIf="user.get('email').hasError('required') && user.get('email').touched">Email is required</p>
+                            <p class="help-block text-danger" *ngIf="user.get('email').hasError('invalidemail') && user.get('email').dirty && !user.get('email').hasError('required')">This doesn't look like a valid email address</p>
+                        </div>
+                    </div>
+                    <div class="row control-group" formGroupName="pwd">
+                        <div class="form-group col-xs-6 floating-label-form-group controls">
+                            <label>Password</label>
+                            <input type="password" placeholder="Password" formControlName="password">
+                            <p class="help-block text-danger" *ngIf="user.get('pwd').get('password').hasError('required') && user.get('pwd').get('password').touched">Password is required</p>
+                        </div>
+                        <div class="form-group col-xs-6 floating-label-form-group controls">
+                            <label>Confirm Password</label>
+                            <input type="password" placeholder="Confirm Password" formControlName="confirm_password">
+                            <p class="help-block text-danger" *ngIf="user.get('pwd').get('confirm_password').hasError('required') && user.get('pwd').get('confirm_password').touched">Confirm Password is required</p>
+                            <p class="help-block text-danger" *ngIf="user.get('pwd').hasError('notequals') && user.get('pwd').get('confirm_password').dirty && user.get('pwd').get('password').dirty">Please enter the same pasword</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button type="submit" class="btn btn-success btn-lg" [disabled]="user.invalid">Sign Up</button>
+                            <a class="pull-right" [routerLink]="['/auth/login']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Already have an account?</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

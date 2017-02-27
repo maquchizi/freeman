@@ -144,7 +144,7 @@ export class SeedConfig {
    * `index.html`.
    * @type {string}
    */
-  APP_TITLE = 'Welcome to angular-seed!';
+  APP_TITLE = 'Freeman';
 
   /**
    * The base folder of the applications source files.
@@ -578,7 +578,8 @@ export class SeedConfig {
       },
       remapIstanbulReporter: {
         reports: {
-          html: this.COVERAGE_TS_DIR
+          html: this.COVERAGE_TS_DIR,
+          lcovonly: this.COVERAGE_DIR+  '/coverage.lcov'
         }
       }
     };
